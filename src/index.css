@@ -1,0 +1,223 @@
+:root {
+  --main-header-height: 64px;
+  --font-en: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-km: 'Kantumruy Pro', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-current: var(--font-en);
+}
+
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+html[lang="km"], [lang="km"], .lang-km {
+  --font-current: var(--font-km);
+  font-family: var(--font-km);
+  line-height: 1.65;
+}
+
+html[lang="en"], [lang="en"], .lang-en {
+  --font-current: var(--font-en);
+  font-family: var(--font-en);
+}
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Kantumruy Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-current);
+    @apply antialiased text-slate-900 bg-slate-50 dark:text-slate-100 dark:bg-slate-950 transition-colors duration-200;
+  }
+}
+
+/* Custom modern scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700;
+}
+
+/* Smooth code editor transition and custom markdown styles */
+.markdown-body {
+  @apply text-sm leading-relaxed space-y-4;
+}
+
+.markdown-body h1 {
+  @apply text-xl font-bold tracking-tight text-slate-950 dark:text-white mt-6 mb-4;
+}
+
+.markdown-body h2 {
+  @apply text-lg font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-5 mb-3;
+}
+
+.markdown-body h3 {
+  @apply text-base font-semibold text-slate-900 dark:text-slate-200 mt-4 mb-2;
+}
+
+.markdown-body p {
+  @apply text-slate-700 dark:text-slate-300 mb-3;
+}
+
+.markdown-body ul, .markdown-body ol {
+  @apply pl-5 space-y-1 mb-4 list-disc;
+}
+
+.markdown-body li {
+  @apply text-slate-700 dark:text-slate-300;
+}
+
+.markdown-body code {
+  @apply font-mono text-xs px-1.5 py-0.5 bg-slate-100 dark:bg-slate-900 rounded text-amber-600 dark:text-amber-400 font-medium;
+}
+
+.markdown-body pre {
+  @apply p-4 bg-slate-900 dark:bg-black rounded-lg overflow-x-auto my-4 border border-slate-200 dark:border-slate-800;
+}
+
+.markdown-body pre code {
+  @apply bg-transparent p-0 text-slate-200 dark:text-slate-200 block text-xs leading-normal;
+}
+
+.markdown-body blockquote {
+  @apply pl-4 border-l-4 border-slate-200 dark:border-slate-800 italic text-slate-600 dark:text-slate-400;
+}
+
+.markdown-body table {
+  @apply w-full text-left border-collapse my-4;
+}
+
+.markdown-body th {
+  @apply px-4 py-2 border-b-2 border-slate-200 dark:border-slate-800 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900/50;
+}
+
+.markdown-body td {
+  @apply px-4 py-2 border-b border-slate-100 dark:border-slate-900 text-sm text-slate-700 dark:text-slate-300;
+}
+
+/* Prism Syntax Highlighting Styles */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-slate-500 italic;
+}
+
+.token.punctuation {
+  @apply text-slate-400;
+}
+
+.token.namespace {
+  @apply opacity-70;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  @apply text-blue-400 font-bold;
+}
+
+.token.selector,
+.token.attr-name,
+.token.builtin,
+.token.inserted {
+  @apply text-teal-400;
+}
+
+.token.string,
+.token.char {
+  @apply text-amber-400;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  @apply text-amber-300;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  @apply text-blue-400 font-bold;
+}
+
+.token.function,
+.token.class-name {
+  @apply text-teal-300;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-amber-400;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Infinite Marquee animations */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none !important;
+  }
+}
+
+

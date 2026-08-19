@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" fill="none">
+  <!-- Monochrome Icon Mark (#0F172A) -->
+  <g transform="translate(6, 4) scale(0.56)" fill="#0F172A">
+    <path 
+      d="M 60 16 L 76 26 L 56 38 L 36 28 C 24 22 14 31 14 42 C 14 52 22 58 32 63 L 48 71 L 48 54 L 32 46 C 26 43 25 37 29 33 L 52 20 L 60 16 Z" 
+    />
+    <path 
+      d="M 40 84 L 24 74 L 44 62 L 64 72 C 76 78 86 69 86 58 C 86 48 78 42 68 37 L 52 29 L 52 46 L 68 54 C 74 57 75 63 71 67 L 48 80 L 40 84 Z" 
+    />
+  </g>
+
+  <!-- Wordmark "SabayCode" (Monochrome #0F172A) -->
+  <text x="76" y="38" font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif" font-weight="800" font-size="30" fill="#0F172A" letter-spacing="-0.03em">SabayCode</text>
+
+  <!-- Tagline "BILINGUAL DEV" -->
+  <text x="77" y="52" font-family="'JetBrains Mono', 'Courier New', monospace" font-weight="700" font-size="9.5" fill="#0F172A" letter-spacing="0.22em">BILINGUAL DEV</text>
+</svg>

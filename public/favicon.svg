@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Favicon Dark Blue Squircle App Badge with 3D Ribbon 'S' -->
+  <defs>
+    <linearGradient id="favBadgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B235E" />
+      <stop offset="50%" stop-color="#071945" />
+      <stop offset="100%" stop-color="#040F2D" />
+    </linearGradient>
+
+    <linearGradient id="favTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#1E40AF" />
+    </linearGradient>
+
+    <linearGradient id="favTopFace" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#7DD3FC" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <linearGradient id="favBottomGrad" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="50%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+
+    <linearGradient id="favBottomFace" x1="100%" y1="100%" x2="0%" y2="50%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+
+  <rect width="100" height="100" rx="26" fill="url(#favBadgeBg)" />
+
+  <g>
+    <path
+      d="M 35 33 C 24 33 20 42 20 50 C 20 58 27 63 36 63 L 46 63 L 46 51 L 36 51 C 30 51 29 46 32 42 L 50 33 Z"
+      fill="url(#favTopGrad)"
+    />
+    <path
+      d="M 35 33 L 60 33 L 75 39 L 50 45 L 35 33 Z"
+      fill="url(#favTopFace)"
+    />
+  </g>
+
+  <g>
+    <path
+      d="M 65 67 C 76 67 80 58 80 50 C 80 42 73 37 64 37 L 54 37 L 54 49 L 64 49 C 70 49 71 54 68 58 L 50 67 Z"
+      fill="url(#favBottomGrad)"
+    />
+    <path
+      d="M 65 67 L 40 67 L 25 61 L 50 55 L 65 67 Z"
+      fill="url(#favBottomFace)"
+    />
+  </g>
+</svg>

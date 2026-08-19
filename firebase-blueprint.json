@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User account profile and settings",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "fullName": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 20 },
+        "role": { "type": "string", "enum": ["user", "admin", "student"] },
+        "avatarUrl": { "type": "string", "maxLength": 200 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "fullName"]
+    },
+    "StudentProfile": {
+      "title": "StudentProfile",
+      "description": "Student learning progress, XP, and streak",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "xp": { "type": "number" },
+        "streak": { "type": "number" },
+        "track": { "type": "string" },
+        "courseProgress": { "type": "object" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId"]
+    },
+    "Certificate": {
+      "title": "Certificate",
+      "description": "Issued course completion certificate",
+      "type": "object",
+      "properties": {
+        "certificateId": { "type": "string", "maxLength": 64 },
+        "studentName": { "type": "string", "maxLength": 100 },
+        "studentEmail": { "type": "string", "maxLength": 100 },
+        "courseName": { "type": "string", "maxLength": 150 },
+        "issueDate": { "type": "string" },
+        "verificationUrl": { "type": "string" }
+      },
+      "required": ["certificateId", "studentName", "courseName"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User account information"
+    },
+    "/student_profiles/{profileId}": {
+      "schema": { "$ref": "#/entities/StudentProfile" },
+      "description": "Student progress details"
+    },
+    "/certificates/{certId}": {
+      "schema": { "$ref": "#/entities/Certificate" },
+      "description": "Issued certificates collection"
+    }
+  }
+}
